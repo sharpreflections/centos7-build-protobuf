@@ -23,6 +23,7 @@ RUN yum -y install \
         autoconf \
         automake \
         libtool \
+        devtoolset-8 \
  \
  && echo "Downloading protobuf 3.0.2:" \
  && curl --progress-bar https://codeload.github.com/protocolbuffers/protobuf/tar.gz/v3.0.2 --output protobuf-3.0.2.tar.gz \
