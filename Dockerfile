@@ -16,7 +16,7 @@ ARG prefix
 # Builder Image
 ###############################################################################
 
-FROM centos7-base as builder
+FROM centos7-build-base as builder
 
 RUN yum -y install \
         unzip \
