@@ -41,13 +41,13 @@ RUN yum -y install \
  \
  && cd protobuf-3.0.2 \
  && ./autogen.sh \
- && ./configure --prefix=/opt/protobuf-3.0 \
+ && ./configure --prefix=${prefix}/protobuf-3.0 \
  && make --jobs=$(nproc --all) \
  && make install \
  \
  && cd ../protobuf-3.5.2 \
  && ./autogen.sh \
- && ./configure --prefix=/opt/protobuf-3.5 \
+ && ./configure --prefix=${prefix}/protobuf-3.5 \
  && make --jobs=$(nproc --all) \
  && make install \
  \
