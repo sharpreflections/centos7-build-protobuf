@@ -8,7 +8,7 @@ ARG prefix=/opt
 # Base Image
 ###############################################################################
 
-FROM centos:centos7 as base
+FROM quay.io/centos/centos:centos7 as base
 
 ARG prefix
 
@@ -16,7 +16,7 @@ ARG prefix
 # Builder Image
 ###############################################################################
 
-FROM centos7-build-base as builder
+FROM quay.io/sharpreflections/centos7-build-base as builder
 
 RUN yum -y install \
         unzip \
