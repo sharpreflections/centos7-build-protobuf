@@ -18,6 +18,8 @@ ARG prefix
 
 FROM quay.io/sharpreflections/centos7-build-base as builder
 
+ARG prefix
+
 RUN yum -y install \
         unzip \
         autoconf \
