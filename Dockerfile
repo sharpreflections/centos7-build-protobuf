@@ -39,6 +39,12 @@ RUN yum -y install \
  && tar -xf protobuf-3.5.2.tar.gz \
  && echo "done" \
  \
+ && echo "Downloading protobuf 3.7.0:" \
+ && curl --progress-bar https://codeload.github.com/protocolbuffers/protobuf/tar.gz/v3.7.0 --output protobuf-3.7.0.tar.gz \
+ && echo -n "Extracting protobuf 3.7.0: " \
+ && tar -xf protobuf-3.7.0.tar.gz \
+ && echo "done" \
+ \
  && source scl_source enable devtoolset-8 \
  \
  && cd protobuf-3.0.2 \
@@ -50,6 +56,12 @@ RUN yum -y install \
  && cd ../protobuf-3.5.2 \
  && ./autogen.sh \
  && ./configure --prefix=${prefix}/protobuf-3.5 \
+ && make --jobs=$(nproc --all) \
+ && make install \
+ \
+ && cd ../protobuf-3.7.0 \
+ && ./autogen.sh \
+ && ./configure --prefix=${prefix}/protobuf-3.7 \
  && make --jobs=$(nproc --all) \
  && make install \
  \
